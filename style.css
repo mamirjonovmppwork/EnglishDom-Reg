@@ -1,0 +1,409 @@
+/* 1. Global sozlamalar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #f4f7fa; /* Yumshoq kulrang fon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Asosiy karta - endi u flex-konteyner */
+.card {
+    background: #ffffff;
+    width: 95%;
+    max-width: 1000px; /* Kenglikni oshirdik, ikkala taraf sig'ishi uchun */
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(26, 35, 126, 0.08);
+    
+    /* Yonma-yon qilish uchun asosiy kodlar */
+    display: flex;
+    flex-direction: row; /* Elementlarni yonma-yon joylaydi */
+    justify-content: space-between; /* Orasini ochadi */
+    align-items: flex-start; /* Tepadan tekislaydi */
+    gap: 40px; /* Ikkala blok orasidagi masofa */
+}
+
+/* Chap taraf (Forma) stili */
+.left {
+    flex: 1; /* Bo'sh joyni teng taqsimlaydi */
+    min-width: 300px;
+}
+
+/* O'ng taraf (Swiper) stili */
+.right {
+    flex: 1;
+    min-width: 300px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.swep-rasm{
+    height: 400px;
+}
+
+
+
+/* 3. Header qismi (Logo va Til) */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.logo {
+    height: 40px; /* Logoni ixchamroq qildik */
+    width: auto;
+}
+
+.lang-mini {
+    display: flex;
+    background: #f0f2f5;
+    padding: 4px;
+    border-radius: 12px;
+}
+
+.lang-mini .lang-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: #555;
+}
+
+.lang-mini .lang-btn.active {
+    background: #000A51; /* Faol til ko'k rangda */
+    color: #fff;
+}
+
+/* 4. Matnlar */
+h2 {
+    font-size: 26px;
+    color: #000A51; /* To'q ko'k */
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+h2 span {
+    color: #FFB100; /* Biroz ochroq ko'k */
+    display: inline-block;
+}
+
+.text {
+    color: #607d8b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e8eaf6;
+    border-radius: 12px;
+    background: #fbfbfd;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    appearance: none; /* Standart brauzer strelkasini olib tashlaymiz */
+    transition: 0.3s;
+}
+
+/* Select uchun maxsus ko'rinish */
+select:focus {
+    border-color: #1a237e;
+    background: #fff;
+}
+.subjects-container {
+    margin-bottom: 20px;
+}
+
+.label-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--text-main);
+    padding: 8px 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.checkbox-item input {
+    display: none; /* Asl checkboxni yashiramiz */
+}
+
+.custom-check {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #3949ab;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Tanlanganda stillar o'zgarishi */
+.checkbox-item input:checked + .custom-check {
+    background: #1a237e;
+    border-color: #1a237e;
+}
+
+.checkbox-item input:checked + .custom-check::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-item:hover {
+    border-color: #1a237e;
+}
+
+/* 5. Inputlar */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e8eaf6;
+    border-radius: 12px;
+    background: #fbfbfd;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #000A51;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(26, 35, 126, 0.05);
+}
+
+/* 6. Ko'k Tugma (Primary Button) */
+.send-btn {
+    background: #000A51; /* To'q ko'k */
+    color: #fff;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.2);
+}
+
+.send-btn:hover {
+    background: #0d145a; /* Hover bo'lganda yanada to'qlashadi */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 35, 126, 0.3);
+}
+
+.send-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Umumiy o'ng taraf konteyneri */
+.right-content-area {
+    width: 100%;
+    max-width: 420px;
+    align-items: center;
+}
+
+
+/* Swiper uchun oq karta va soya */
+.swiper-card-box {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 15px;
+    /* Qora bg o'rniga shadow */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+/* Rasmni to'liq va proporsiyada chiqarish */
+.swiper-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* Pagination (Chiziqchalar) stili */
+.swiper-pagination {
+    position: relative !important;
+    margin-top: 15px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 40px !important;
+    height: 5px !important;
+    border-radius: 3px !important;
+    background: #e0e0e0 !important;
+    opacity: 1 !important;
+    margin: 0 5px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #002B5B !important; /* Formangizning asosiy rangi bo'lsa shuni qo'ying */
+}
+/* --- PROFESSIONAL MOBILE ADAPTATION --- */
+
+@media (max-width: 992px) {
+    body {
+        align-items: flex-start; /* Tepadan boshlanishi uchun */
+        padding: 10px;
+    }
+    .right{
+        display: none;
+    }
+    .card {
+        flex-direction: column-reverse; /* Ustma-ust tushish */
+        gap: 25px;
+        padding: 25px 20px;
+        width: 100%;
+        max-width: 500px; /* Mobil ilova ko'rinishi uchun chegaralangan kenglik */
+        margin: 10px auto;
+        border-radius: 20px;
+    }
+
+    .left, .right {
+        width: 100%;
+        min-width: unset; /* Cheklovni olib tashlaymiz */
+    }
+
+    .right {
+        order: -1; /* Rasmni (sliderni) tepaga chiqaradi, bu App stiliga xos */
+        height: auto;
+    }
+
+    .swiper-slide img {
+        height: 220px; /* Mobil uchun optimal balandlik */
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .header-top {
+        margin-bottom: 20px;
+    }
+    .swep-rasm{
+        width: 340px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Haqiqiy Mobile App ko'rinishi */
+    body {
+        padding: 0;
+        background-color: #fff; /* Mobil ilovalarda fon odatda oq bo'ladi */
+    }
+
+    .card {
+        box-shadow: none; /* Chekkalardagi soyani olib tashlaymiz */
+        padding: 15px;
+        border-radius: 0; /* Butun ekranga yoyilishi uchun */
+        margin: 0;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .checkbox-group {
+        justify-content: space-between;
+    }
+
+    .checkbox-item {
+        flex: 1 1 45%; /* Checkboxlar yonma-yon chiroyli turishi uchun */
+        justify-content: center;
+        font-size: 13px;
+        padding: 12px 8px;
+    }
+
+    input, .send-btn {
+        padding: 14px; /* Barmoq bilan bosishga qulay o'lcham */
+        font-size: 15px;
+    }
+
+    .send-btn {
+        margin-top: 5px;
+        width: 100%;
+    }
+    h2{
+        padding-top: 50px;
+        padding-bottom: 10px;
+        font-size: 30px;
+        text-align: left;
+    }
+    .text{
+        margin-bottom: 30px;
+    }
+}

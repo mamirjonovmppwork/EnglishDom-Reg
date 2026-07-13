@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Dom Education Center</title>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1730163984773987');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1730163984773987&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="container">
+        <div class="card">
+          <div class="left">
+            <div class="header-top">
+              <img src="img/Logo-blue-orange.png" alt="Logo" class="logo" />
+              <div class="lang-mini">
+                <button class="lang-btn active" onclick="changeLang('uz')">
+                  UZ
+                </button>
+                <button class="lang-btn" onclick="changeLang('ru')">RU</button>
+              </div>
+            </div>
+
+            <h2 id="hero-title">
+              Kelajak ko'nikmalarini <span>BIZ BILAN</span> o'rganing!
+            </h2>
+            <p class="text" id="hero-desc">
+              Sizga qiziq bo'lgan fanni tanlang va mutaxassislarimizdan bepul
+              maslahat oling.
+            </p>
+
+            <div class="form-container">
+              <div class="subjects-container">
+                <p class="label-text">Qaysi fanni o'qimoqchisiz?</p>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      name="subject"
+                      id="check-math"
+                      value="Matematika"
+                    />
+                    <span class="custom-check"></span>
+                    <span id="label-math">Matematika</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      name="subject"
+                      id="check-english"
+                      value="Ingliz tili"
+                    />
+                    <span class="custom-check"></span>
+                    <span id="label-english">Ingliz tili</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      name="subject"
+                      id="check-other"
+                      value="Boshqa"
+                    />
+                    <span class="custom-check"></span>
+                    <span id="label-other">Boshqa</span>
+                  </label>
+                </div>
+              </div>
+
+              <input
+                type="text"
+                id="input-name"
+                placeholder="Ismingiz"
+                required
+              />
+              <input
+                type="tel"
+                id="input-phone"
+                placeholder="Telefon raqamingiz"
+                minlength="9"
+                maxlength="9"
+                required
+              />
+
+              <button class="send-btn" id="btn-send">Ro'yxatdan o'tish</button>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="swiper-card-box">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img class="swep-rasm" src="img/dtm.jpg" alt="DTM" />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img class="swep-rasm" src="img/cefr.jpg" alt="CEFR" />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img class="swep-rasm" src="img/ml1.jpg" alt="Milliy" />
+                  </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

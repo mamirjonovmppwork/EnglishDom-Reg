@@ -1,0 +1,8 @@
+# Maxfiy sozlamalar (bot token va h.k.) - hech qachon gitga yuklanmaydi
+config.js
+
+# Node modullar (agar kelajakda kerak bo'lsa)
+node_modules/
+
+# Tizim fayllari
+.DS_Store
