@@ -13,19 +13,38 @@
 
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1730163984773987');
-    fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1730163984773987");
+      fbq("track", "PageView");
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1730163984773987&ev=PageView&noscript=1"
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1730163984773987&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
   </head>
@@ -46,11 +65,12 @@
             </div>
 
             <h2 id="hero-title">
-              Kelajak ko'nikmalarini <span>BIZ BILAN</span> o'rganing!
+              Matematika va ingliz tili <span>o`rganishni</span> xohlaysizmi ?
             </h2>
             <p class="text" id="hero-desc">
-              Sizga qiziq bo'lgan fanni tanlang va mutaxassislarimizdan bepul
-              maslahat oling.
+              Ismingiz va telefon raqamingizni yozib qoldiring, biz sizga
+              qoʻngʻiroq qilamiz va birorta ham savolingiz javobsiz qolmasligiga
+              harakat qilamiz
             </p>
 
             <div class="form-container">
@@ -130,7 +150,6 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
