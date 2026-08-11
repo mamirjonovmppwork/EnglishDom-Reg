@@ -1,6 +1,9 @@
 # Maxfiy sozlamalar (bot token va h.k.) - hech qachon gitga yuklanmaydi
 config.js
 
+# Vercel CLI lokal fayllari
+.vercel
+
 # Tizim fayllari
 .DS_Store
 Thumbs.db
