@@ -1,24 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Dom Education Center</title>
-    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <meta
+      name="description"
+      content="Matematika va ingliz tilini o'rganmoqchimisiz? Ro'yxatdan o'ting, mutaxassislarimiz siz bilan bog'lanadi."
     />
+    <link rel="shortcut icon" href="img/icon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel -->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
         };
         if (!f._fbq) f._fbq = n;
         n.push = n;
@@ -30,23 +29,20 @@
         t.src = v;
         s = b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
       fbq("init", "1730163984773987");
       fbq("track", "PageView");
     </script>
-    <noscript
-      ><img
+    <noscript>
+      <img
         height="1"
         width="1"
         style="display: none"
         src="https://www.facebook.com/tr?id=1730163984773987&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+        alt=""
+      />
+    </noscript>
+    <!-- /Meta Pixel -->
   </head>
 
   <body>
@@ -55,78 +51,62 @@
         <div class="card">
           <div class="left">
             <div class="header-top">
-              <img src="img/Logo-blue-orange.png" alt="Logo" class="logo" />
+              <img src="img/Logo-blue-orange.png" alt="English Dom logo" class="logo" />
               <div class="lang-mini">
-                <button class="lang-btn active" onclick="changeLang('uz')">
-                  UZ
-                </button>
-                <button class="lang-btn" onclick="changeLang('ru')">RU</button>
+                <button class="lang-btn active" data-lang="uz" type="button">UZ</button>
+                <button class="lang-btn" data-lang="ru" type="button">RU</button>
               </div>
             </div>
 
             <h2 id="hero-title">
-              Matematika va ingliz tili <span>o`rganishni</span> xohlaysizmi ?
+              Matematika va ingliz tili <span>o'rganishni</span> xohlaysizmi?
             </h2>
             <p class="text" id="hero-desc">
               Ismingiz va telefon raqamingizni yozib qoldiring, biz sizga
-              qoʻngʻiroq qilamiz va birorta ham savolingiz javobsiz qolmasligiga
-              harakat qilamiz
+              qo'ng'iroq qilamiz va birorta ham savolingiz javobsiz
+              qolmasligiga harakat qilamiz
             </p>
 
-            <div class="form-container">
+            <form class="form-container" id="lead-form" novalidate>
               <div class="subjects-container">
-                <p class="label-text">Qaysi fanni o'qimoqchisiz?</p>
+                <p class="label-text" id="label-subjects">Qaysi fanni o'qimoqchisiz?</p>
                 <div class="checkbox-group">
                   <label class="checkbox-item">
-                    <input
-                      type="checkbox"
-                      name="subject"
-                      id="check-math"
-                      value="Matematika"
-                    />
+                    <input type="checkbox" name="subject" value="Matematika" />
                     <span class="custom-check"></span>
                     <span id="label-math">Matematika</span>
                   </label>
                   <label class="checkbox-item">
-                    <input
-                      type="checkbox"
-                      name="subject"
-                      id="check-english"
-                      value="Ingliz tili"
-                    />
+                    <input type="checkbox" name="subject" value="Ingliz tili" />
                     <span class="custom-check"></span>
                     <span id="label-english">Ingliz tili</span>
                   </label>
                   <label class="checkbox-item">
-                    <input
-                      type="checkbox"
-                      name="subject"
-                      id="check-other"
-                      value="Boshqa"
-                    />
+                    <input type="checkbox" name="subject" value="Boshqa" />
                     <span class="custom-check"></span>
                     <span id="label-other">Boshqa</span>
                   </label>
                 </div>
               </div>
 
-              <input
-                type="text"
-                id="input-name"
-                placeholder="Ismingiz"
-                required
-              />
-              <input
-                type="tel"
-                id="input-phone"
-                placeholder="Telefon raqamingiz"
-                minlength="9"
-                maxlength="9"
-                required
-              />
+              <input type="text" id="input-name" placeholder="Ismingiz" autocomplete="name" required />
 
-              <button class="send-btn" id="btn-send">Ro'yxatdan o'tish</button>
-            </div>
+              <div class="phone-field">
+                <span class="phone-prefix">+998</span>
+                <input
+                  type="tel"
+                  id="input-phone"
+                  placeholder="90 123 45 67"
+                  inputmode="numeric"
+                  minlength="9"
+                  maxlength="9"
+                  autocomplete="tel-national"
+                  required
+                />
+              </div>
+
+              <button class="send-btn" id="btn-send" type="submit">Ro'yxatdan o'tish</button>
+            </form>
           </div>
 
           <div class="right">
@@ -134,18 +114,33 @@
               <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img class="swep-rasm" src="img/dtm.jpg" alt="DTM" />
-                  </div>
+                    <img
+                      src="img/dtm.jpg"
 
-                  <div class="swiper-slide">
-                    <img class="swep-rasm" src="img/cefr.jpg" alt="CEFR" />
-                  </div>
 
+                      alt="DTM natijalari"
+                      fetchpriority="high"
+                    />
+                  </div>
                   <div class="swiper-slide">
-                    <img class="swep-rasm" src="img/ml1.jpg" alt="Milliy" />
+                    <img
+                      src="img/cefr.jpg"
+
+
+                      alt="CEFR sertifikati"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="img/ml1.jpg"
+
+
+                      alt="Milliy sertifikat"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
-
                 <div class="swiper-pagination"></div>
               </div>
             </div>
@@ -154,8 +149,8 @@
       </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="config.js"></script>
-    <script src="app.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
