@@ -1,5 +1,5 @@
 {
   "framework": null,
-  "buildCommand": "echo \"const botToken = \\\"$BOT_TOKEN\\\";\" > config.js",
+  "buildCommand": "echo \"const botToken = \\\"$botToken\\\";\" > config.js",
   "outputDirectory": "."
 }
